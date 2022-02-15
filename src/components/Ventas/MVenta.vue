@@ -2,7 +2,7 @@
   <div class="hello">
     <hr>
 
-    <router-link to="/añadir-usuarios" class="btn btn-danger"> Añadir Usuarios</router-link>
+    <router-link to="/añadir-venta" class="btn btn-danger"> Registrar Ventas</router-link>
 
     <br>
 
@@ -11,23 +11,22 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Email</th>
-          <th scope="col">Contraseña</th>
-          <th scope="col">Opciones</th>
+          <th scope="col">Codigo </th>
+          <th scope="col">Comprador</th>
+          <th scope="col">Vendedor</th>
+          <th scope="col">Monto Transaccion</th>
+         
         </tr>
       </thead>
       <tbody>
         <tr v-for="el of vector" :key="el.id">
           <th scope="row">{{ el.id }}</th>
-          <td>{{ el.nombre }}</td>
-          <td>{{ el.apellido }}</td>
-          <td>{{ el.email }} </td>
-          <td>{{ el.contraseña }}</td>
+          <td>{{ el.comprador }}</td>
+          <td>{{ el.vendedor }}</td>
+          <td>{{ el.precio }}</td>
+         
           <td>
-            <router-link :to="{ name: 'EditarUsuarios', params: { id: el.id }}" class="btn btn-primary">Editar</router-link>
+            <router-link :to="{ name: 'EVenta', params: { id: el.id }}" class="btn btn-primary">Editar</router-link>
             <button class="btn btn-primary" @click="eliminar(el.id)" >Eliminar </button>
           </td>
         </tr>
@@ -39,18 +38,18 @@
 <script>
 //import func from 'vue-editor-bridge';
 export default {
-  name: "HelloWorld",
+  name: "MPedidos",
   data: function () {
     return {
       vector: [],
     };
   },
   created: function () {
-    this.consultarUsuarios();
+    this.consultarVentas();
   },
   methods: {
-    consultarUsuarios: function () {
-      fetch("http://localhost:3000/usuarios", {
+    consultarVentas: function () {
+      fetch("http://localhost:3000/ventas", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -64,14 +63,14 @@ export default {
         });
     },
     eliminar: function(id){
-      fetch("http://localhost:3000/usuarios/"+id,{
+      fetch("http://localhost:3000/ventas/"+id,{
         method: "DELETE",
         headers: {
           "Content-Type" : "application/json"
         }
 
       })
-      .then(() => (window.location.href = "/"));
+      .then(() => (window.location.href = "/ventas"));
     }
   },
 };

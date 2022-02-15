@@ -1,10 +1,16 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Usuarios </router-link> |
+    <router-link to="/pedidos">Pedidos</router-link> |
+    <router-link to="/inventario">Inventario</router-link> |
+    <router-link to="/ventas">Ventas</router-link> 
+    <router-view />
+
+    
   </div>
-  <router-view />
+  
 </template>
+
 
 <style lang="scss">
 #app {
