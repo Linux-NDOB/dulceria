@@ -2,7 +2,7 @@
   <div class="hello">
     <hr>
 
-    <router-link to="/añadir-venta" class="btn btn-danger"> Registrar Ventas</router-link>
+    <router-link to="/añadir-venta" class="btn btn-warning"> Registrar Ventas</router-link>
 
     <br>
 

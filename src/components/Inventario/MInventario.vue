@@ -2,7 +2,7 @@
   <div class="hello">
     <hr>
 
-    <router-link to="/añadir-inventario" class="btn btn-danger"> Añadir Producto</router-link>
+    <router-link to="/añadir-inventario" class="btn btn-warning"> Añadir Producto</router-link>
 
     <br>
 

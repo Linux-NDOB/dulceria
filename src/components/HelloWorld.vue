@@ -2,7 +2,7 @@
   <div class="hello">
     <hr>
 
-    <router-link to="/añadir-usuarios" class="btn btn-danger"> Añadir Usuarios</router-link>
+    <router-link to="/añadir-usuarios" class="btn btn-warning"> Añadir Usuarios</router-link>
 
     <br>
 

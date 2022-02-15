@@ -2,7 +2,7 @@
   <div class="hello">
     <hr>
 
-    <router-link to="/añadir-pedidos" class="btn btn-danger"> Añadir Pedido</router-link>
+    <router-link to="/añadir-pedidos" class="btn btn-warning"> Añadir Pedido</router-link>
 
     <br>
 
